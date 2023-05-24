@@ -2,15 +2,14 @@
 
 Rick and Morty drawing app, with more than 800 characters and some information.
 
-![Imagem-projeto-RickMorty](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/7a5432fe-2ba8-46f0-be44-09761b2ed412)
-
 ### Home screen:
 
-![tela-home](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/7b3eecb2-9f44-4ae0-8bef-9d3880bbb9cc)
+![tela-home](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/c057fab9-ffd0-4e4a-830d-bc7d069abfef)
+
 
 ### Card screen:
 
-![tela-informacoes](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/70f8d21e-6bac-496f-a0d3-48d067a38e9d)
+![tela-informacoes](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/f5705cea-7b02-4b75-9108-8eccfc8a859d)
 
 
 ### API:
