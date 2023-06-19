@@ -1,6 +1,7 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { useEffect, useState } from "react";
-import { FlatList, Image, ImageBackground, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Alert, FlatList, Image, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import api from "../services/api";
 import Lista from "./Lista";
 
@@ -9,16 +10,22 @@ export default function Home() {
     const [character, setCharacter] = useState([]);
     const [page, setPage] = useState(null);
     const [submitPage, setSubmitPage] = useState('1');
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         (async () => {
+            setLoading(true)
             const response = await api.get(`/character?page=${submitPage}`)
                 .then(async (current) => {
                     setCharacter(await current.data);
+                    setLoading(false)
                 })
                 .catch((err) => {
-                    alert("Página não encontrada");
-                    console.log(err)
+                    Alert.alert(
+                        'Página não encontrada',
+                        `${err}`
+                    )
+                    setLoading(false)
                     return;
                 })
         })()
@@ -30,14 +37,17 @@ export default function Home() {
             setPage("");
             Keyboard.dismiss();
         } else {
-            alert("Digite uma página de 1 a 42");
+            Alert.alert(
+                'Página não encontrada',
+                'Digite uma página de 1 a 42.',
+            )
             setPage("")
             return;
         }
     }
 
     return (
-        <ImageBackground source={require('../img/wallpaper.jpg')} style={styles.container}>
+        <SafeAreaView style={styles.container}>
 
             <Image source={require('../img/tittle.png')} style={styles.tittle} />
 
@@ -57,22 +67,29 @@ export default function Home() {
             <Text style={styles.textPag}>Página {submitPage} de 42</Text>
 
             {character &&
-                <FlatList
-                    style={styles.flatList}
-                    data={character.results}
-                    renderItem={({ item }) => <Lista data={item} />}
-                    numColumns={2}
-                    showsVerticalScrollIndicator={false}
-                />
+                <View style={{ flex: 1 }}>
+                    {loading ?
+                        <ActivityIndicator size={50} color={'#000'} style={styles.loading} />
+                        :
+                        <FlatList
+                            style={styles.flatList}
+                            data={character.results}
+                            renderItem={({ item }) => <Lista data={item} />}
+                            numColumns={2}
+                            showsVerticalScrollIndicator={false}
+                        />
+                    }
+                </View>
             }
 
-        </ImageBackground>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#00FF00'
     },
     tittle: {
         width: 256,
@@ -97,12 +114,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
     },
     textPag: {
-        color: '#FFF',
         margin: 3,
-        backgroundColor: 'black',
         width: 115,
         textAlign: 'center',
         borderRadius: 3,
+        fontWeight: 'bold'
+    },
+    loading: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 200,
     },
     flatList: {
         backgroundColor: '#555',

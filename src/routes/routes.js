@@ -9,17 +9,20 @@ export default function Routes() {
     return (
         <Drawer.Navigator
             screenOptions={{
-                drawerActiveTintColor: 'lime',
-                drawerInactiveTintColor: 'white',
+                drawerActiveTintColor: '#00FF00',
+                headerTintColor: '#00FF00',
+                drawerActiveBackgroundColor: '#008000',
+                drawerInactiveTintColor: '#FFF',
                 drawerStyle: { backgroundColor: '#101010' },
                 drawerLabelStyle: {
                     fontSize: 17,
-                    color: 'lime',
+                    color: '#00FF00',
                 },
                 drawerItemStyle: {
                     borderRadius: 10,
                     marginTop: 10,
-                }
+                },
+                headerStyle: { backgroundColor: '#000' },
             }}
         >
 

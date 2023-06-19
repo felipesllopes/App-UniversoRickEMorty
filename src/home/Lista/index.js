@@ -22,7 +22,7 @@ export default function Lista({ data }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginVertical: 2,
+        marginVertical: 3,
         alignItems: 'center',
         backgroundColor: '#555'
     },

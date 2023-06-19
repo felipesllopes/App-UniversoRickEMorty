@@ -1,5 +1,5 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function DetailsItem() {
 
@@ -7,8 +7,8 @@ export default function DetailsItem() {
     const navigation = useNavigation();
 
     return (
-        <ImageBackground style={styles.container} source={require('../../img/wallpaper.jpg')}>
-            <ScrollView>
+        <SafeAreaView style={styles.container} >
+            <ScrollView showsVerticalScrollIndicator={false}>
 
                 <Image source={require('../../img/tittle.png')} style={styles.tittle} />
 
@@ -37,13 +37,14 @@ export default function DetailsItem() {
                 </View>
 
             </ScrollView>
-        </ImageBackground>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: 'lime'
     },
     tittle: {
         width: 256,
