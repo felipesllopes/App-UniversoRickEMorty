@@ -74,7 +74,7 @@ export default function Home() {
                         <FlatList
                             style={styles.flatList}
                             data={character.results}
-                            renderItem={({ item }) => <Lista data={item} />}
+                            renderItem={({ item }) => <Lista data={item} fav={false} />}
                             numColumns={2}
                             showsVerticalScrollIndicator={false}
                         />
