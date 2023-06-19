@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FlatList, Image, ImageBackground, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import api from "../services/api";
 import Lista from "./Lista";
+
 export default function Home() {
 
     const [character, setCharacter] = useState([]);
@@ -36,36 +37,35 @@ export default function Home() {
     }
 
     return (
-        <ImageBackground source={require("../img/wallpaper.jpg")} style={styles.container}>
+        <ImageBackground source={require('../img/wallpaper.jpg')} style={styles.container}>
 
             <Image source={require('../img/tittle.png')} style={styles.tittle} />
 
+            <View style={styles.viewSearch}>
+                <TextInput
+                    placeholder='Página'
+                    style={styles.pageInput}
+                    keyboardType="numeric"
+                    value={page}
+                    onChangeText={(text) => setPage(text)}
+                    maxLength={2}
+                />
+                <TouchableOpacity onPress={search} style={styles.buttonSearch}>
+                    <FontAwesome name="search" size={30} color={'black'} />
+                </TouchableOpacity>
+            </View>
+            <Text style={styles.textPag}>Página {submitPage} de 42</Text>
+
             {character &&
-                <View style={{ flex: 1, }}>
-                    <View style={styles.viewSearch}>
-                        <TextInput
-                            placeholder='Página'
-                            style={styles.pageInput}
-                            keyboardType="numeric"
-                            value={page}
-                            onChangeText={(text) => setPage(text)}
-                        />
-                        <TouchableOpacity onPress={search} style={styles.buttonSearch}>
-                            <FontAwesome name="search" size={30} color={'black'} />
-                        </TouchableOpacity>
-                    </View>
-                    <Text style={styles.textPag}>Página {submitPage} de 42</Text>
-
-                    <FlatList
-                        style={styles.flatList}
-                        data={character.results}
-                        renderItem={({ item }) => <Lista data={item} />}
-                        numColumns={2}
-                        showsVerticalScrollIndicator={false}
-                    />
-
-                </View>
+                <FlatList
+                    style={styles.flatList}
+                    data={character.results}
+                    renderItem={({ item }) => <Lista data={item} />}
+                    numColumns={2}
+                    showsVerticalScrollIndicator={false}
+                />
             }
+
         </ImageBackground>
     )
 }
@@ -73,7 +73,6 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#25ff14',
     },
     tittle: {
         width: 256,

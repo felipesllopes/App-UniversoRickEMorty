@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../home";
 import DetailsItem from "../home/Lista/DetailsItem";
 
-export default function Routes() {
+export default function CharactersRoutes() {
 
     const Stack = createNativeStackNavigator();
 
