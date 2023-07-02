@@ -25,7 +25,7 @@ export default function Favorites() {
             <Text style={styles.tittle}>Personagens favoritos</Text>
 
             <FlatList
-                style={{ backgroundColor: '#00FF00' }}
+                style={{ backgroundColor: '#32CD32' }}
                 data={favorites}
                 numColumns={2}
                 renderItem={({ item }) => <Lista data={item} screen={'favorite'} />}
@@ -38,12 +38,14 @@ export default function Favorites() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#00FF00',
+        backgroundColor: '#32CD32',
     },
     tittle: {
         fontSize: 26,
         fontWeight: 'bold',
         paddingBottom: 8,
         paddingLeft: 10,
+        borderBottomWidth: 4,
+        borderBottomColor: '#006400',
     },
 })

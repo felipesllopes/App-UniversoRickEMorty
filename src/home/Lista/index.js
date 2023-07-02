@@ -12,7 +12,7 @@ export default function Lista({ data, screen }) {
     return (
         <View style={styles.container}>
             <TouchableOpacity activeOpacity={0.6} onPress={navegate}>
-                <Image style={styles.image} source={{ uri: data.image }} />
+                <Image style={styles.image} source={{ uri: data.image }} resizeMode="cover" />
                 <Text style={styles.name}>{data.name}</Text>
             </TouchableOpacity>
         </View>
@@ -24,16 +24,15 @@ const styles = StyleSheet.create({
         flex: 1,
         marginVertical: 3,
         alignItems: 'center',
-        backgroundColor: '#00FF00'
+        backgroundColor: '#32CD32'
     },
     image: {
         width: 200,
         height: 200,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+        borderRadius: 10
     },
     name: {
-        backgroundColor: 'black',
+        backgroundColor: 'rgba(0,0,0,0.8)',
         width: 200,
         textAlign: 'center',
         color: 'white',
@@ -41,5 +40,9 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
         paddingHorizontal: 2,
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0
     }
 })

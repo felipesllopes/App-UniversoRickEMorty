@@ -5,13 +5,12 @@ export default function CustomDrawer(props) {
     return (
         <DrawerContentScrollView {...props}>
             <View style={styles.container}>
-                <Image source={require('../../img/tittle.png')}
-                    style={styles.tittle}
+
+                <Image source={require('../../img/rickandmorty.png')}
+                    style={styles.img}
+                    resizeMode="cover"
                 />
 
-                <Image source={require('../../img/walp.png')}
-                    style={styles.igm}
-                />
             </View>
 
             <DrawerItemList {...props} />
@@ -31,9 +30,9 @@ const styles = StyleSheet.create({
         height: 80,
         marginVertical: 10,
     },
-    igm: {
-        height: 250,
-        width: 250,
-        marginTop: 5,
+    img: {
+        height: 258,
+        width: 216,
+        marginTop: 12,
     },
 })

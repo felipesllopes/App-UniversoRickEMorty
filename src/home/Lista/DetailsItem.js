@@ -2,6 +2,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { adcFavorite, isFavorite, rmvFavorite } from "../../utils/storage";
+import { ImageBackground } from "react-native";
 
 export default function DetailsItem() {
 
@@ -37,7 +38,7 @@ export default function DetailsItem() {
     }
 
     return (
-        <SafeAreaView style={styles.container} >
+        <ImageBackground style={styles.container} source={require('../../img/wallpaper.jpg')}>
             <ScrollView showsVerticalScrollIndicator={false}>
 
                 <Text style={styles.tittle}>Detalhes do Personagem</Text>
@@ -74,7 +75,7 @@ export default function DetailsItem() {
                 </View>
 
             </ScrollView>
-        </SafeAreaView>
+        </ImageBackground>
     )
 }
 
@@ -82,7 +83,6 @@ export default function DetailsItem() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#00FF00'
     },
     tittle: {
         fontSize: 26,

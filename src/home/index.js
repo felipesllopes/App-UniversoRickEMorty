@@ -97,7 +97,7 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#00FF00',
+        backgroundColor: '#32CD32',
     },
     tittle: {
         fontSize: 26,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         width: 115,
         textAlign: 'center',
         borderRadius: 3,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     loading: {
         alignItems: 'center',
@@ -134,6 +134,6 @@ const styles = StyleSheet.create({
         marginTop: 200,
     },
     flatList: {
-        backgroundColor: '#00FF00',
+        backgroundColor: '#32CD32',
     }
 })

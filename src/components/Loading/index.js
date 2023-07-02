@@ -4,11 +4,7 @@ export default function LoadingApp() {
     return (
         <View style={styles.container}>
 
-            <Image source={require('../../img/tittle.png')}
-                style={styles.tittle}
-            />
-
-            <Image source={require('../../img/walp.png')}
+            <Image source={require('../../img/rickandmorty.png')}
                 style={styles.img}
             />
         </View>
@@ -28,7 +24,7 @@ const styles = StyleSheet.create({
         marginBottom: 50,
     },
     img: {
-        height: 300,
-        width: 300,
+        height: 413,
+        width: 345,
     },
 })
