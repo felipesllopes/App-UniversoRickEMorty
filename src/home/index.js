@@ -1,10 +1,11 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { useEffect, useState } from "react";
-import { ActivityIndicator, Alert, FlatList, Image, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Alert, FlatList, Keyboard, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import DrawerMenu from '../components/DrawerMenu';
+import LoadingApp from '../components/Loading';
 import api from "../services/api";
 import Lista from "./Lista";
-import DrawerMenu from '../components/DrawerMenu';
 
 export default function Home() {
 
@@ -48,31 +49,33 @@ export default function Home() {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={{ flex: 1 }}>
+            {character.length == 0
+                ?
+                <LoadingApp />
+                :
 
-            <DrawerMenu />
+                <SafeAreaView style={styles.container}>
 
-            {/* <Image source={require('../img/tittle.png')} style={styles.tittle} /> */}
+                    <DrawerMenu />
 
-            <Text style={styles.tittle}>Lista de Personagens</Text>
+                    <Text style={styles.tittle}>Lista de Personagens</Text>
 
-            <View style={styles.viewSearch}>
-                <TextInput
-                    placeholder='Página'
-                    style={styles.pageInput}
-                    keyboardType="numeric"
-                    value={page}
-                    onChangeText={(text) => setPage(text)}
-                    maxLength={2}
-                />
-                <TouchableOpacity onPress={search} style={styles.buttonSearch}>
-                    <FontAwesome name="search" size={30} color={'black'} />
-                </TouchableOpacity>
-            </View>
-            <Text style={styles.textPag}>Página {submitPage} de 42</Text>
+                    <View style={styles.viewSearch}>
+                        <TextInput
+                            placeholder='Página'
+                            style={styles.pageInput}
+                            keyboardType="numeric"
+                            value={page}
+                            onChangeText={(text) => setPage(text)}
+                            maxLength={2}
+                        />
+                        <TouchableOpacity onPress={search} style={styles.buttonSearch}>
+                            <FontAwesome name="search" size={30} color={'black'} />
+                        </TouchableOpacity>
+                    </View>
+                    <Text style={styles.textPag}>Página {submitPage} de 42</Text>
 
-            {character &&
-                <View style={{ flex: 1 }}>
                     {loading ?
                         <ActivityIndicator size={50} color={'#000'} style={styles.loading} />
                         :
@@ -84,10 +87,10 @@ export default function Home() {
                             showsVerticalScrollIndicator={false}
                         />
                     }
-                </View>
-            }
 
-        </SafeAreaView>
+                </SafeAreaView>
+            }
+        </View>
     )
 }
 

@@ -15,7 +15,6 @@ export default function Favorites() {
         (async () => {
             setFavorites(await getFavorites("@apprickandmorty"));
         })();
-
     }, [focused])
 
     return (

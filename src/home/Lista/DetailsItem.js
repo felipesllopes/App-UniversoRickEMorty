@@ -31,7 +31,6 @@ export default function DetailsItem() {
         <SafeAreaView style={styles.container} >
             <ScrollView showsVerticalScrollIndicator={false}>
 
-                {/* <Image source={require('../../img/tittle.png')} style={styles.tittle} /> */}
                 <Text style={styles.tittle}>Detalhes do Personagem</Text>
 
                 <View style={styles.nameCard}>

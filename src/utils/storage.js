@@ -1,12 +1,21 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Listar todos os personagens favoritos
+/**
+ * List all favorite characters.
+ * @param {*} key 
+ * @returns 
+ */
 export async function getFavorites(key) {
     const favorites = await AsyncStorage.getItem(key)
     return JSON.parse(favorites) || [];
 }
 
-// verificar se já é favorito quando abrir tela de detalhes do personagem
+/**
+ * Check if it is already favorite when opening character details screen.
+ * @param {*} key 
+ * @param {*} value 
+ * @returns 
+ */
 export async function isFavorite(key, value) {
     let myFavorites = await getFavorites(key);
 
@@ -19,25 +28,26 @@ export async function isFavorite(key, value) {
     }
 }
 
-// Adicionar personagem aos favoritos
+/**
+ * Add character to favorites.
+ * @param {*} key 
+ * @param {*} value 
+ */
 export async function adcFavorite(key, value) {
 
     let myFavorites = await getFavorites(key);
 
-    // let hasItem = myFavorites.some(item => item.id === value.id)
-
-    // if (hasItem) {
-    //     alert("Este personagem já está salvo em seus favoritos")
-    //     return;
-    // }
-
     myFavorites.push(value);
 
     await AsyncStorage.setItem(key, JSON.stringify(myFavorites))
-    alert("Personagem adicionado aos seus favoritos!")
-
 }
 
+/**
+ * Remove character to favorites
+ * @param {*} key 
+ * @param {*} id 
+ * @returns 
+ */
 export async function rmvFavorite(key, id) {
 
     let receipes = await getFavorites(key)
@@ -48,6 +58,5 @@ export async function rmvFavorite(key, id) {
 
     await AsyncStorage.setItem(key, JSON.stringify(myFavorites));
 
-    alert("Personagem removido dos seus favoritos!")
     return myFavorites;
 }
