@@ -1,28 +1,35 @@
+import { useIsFocused } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import Lista from "../home/Lista";
+import DrawerMenu from "../components/DrawerMenu";
 import { getFavorites } from "../utils/storage";
+import ListFavorites from "./listFavorites";
 
 export default function Favorites() {
 
-    const [favorites, setFavorites] = useState();
+    const [favorites, setFavorites] = useState([]);
+    const focused = useIsFocused();
 
     useEffect(() => {
         (async () => {
-            let fav = await getFavorites("@apprickandmorty");
-            setFavorites(await fav);
+            setFavorites(await getFavorites("@apprickandmorty"));
         })();
-    }, [favorites])
+
+    }, [focused])
 
     return (
         <View style={styles.container}>
 
+            <DrawerMenu />
+
+            <Text style={styles.tittle}>Personagens favoritos</Text>
+
             <FlatList
-                style={{ backgroundColor: '#555' }}
+                style={{ backgroundColor: '#00FF00' }}
                 data={favorites}
                 numColumns={2}
-                renderItem={({ item }) => <Lista data={item} />}
+                renderItem={({ item }) => <ListFavorites data={item} />}
             />
 
         </View>
@@ -33,5 +40,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#00FF00',
-    }
+    },
+    tittle: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        paddingBottom: 8,
+        paddingLeft: 10,
+    },
 })

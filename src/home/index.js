@@ -4,6 +4,7 @@ import { ActivityIndicator, Alert, FlatList, Image, Keyboard, StyleSheet, Text, 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import api from "../services/api";
 import Lista from "./Lista";
+import DrawerMenu from '../components/DrawerMenu';
 
 export default function Home() {
 
@@ -49,7 +50,11 @@ export default function Home() {
     return (
         <SafeAreaView style={styles.container}>
 
-            <Image source={require('../img/tittle.png')} style={styles.tittle} />
+            <DrawerMenu />
+
+            {/* <Image source={require('../img/tittle.png')} style={styles.tittle} /> */}
+
+            <Text style={styles.tittle}>Lista de Personagens</Text>
 
             <View style={styles.viewSearch}>
                 <TextInput
@@ -74,7 +79,7 @@ export default function Home() {
                         <FlatList
                             style={styles.flatList}
                             data={character.results}
-                            renderItem={({ item }) => <Lista data={item} fav={false} />}
+                            renderItem={({ item }) => <Lista data={item} />}
                             numColumns={2}
                             showsVerticalScrollIndicator={false}
                         />
@@ -89,13 +94,13 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#00FF00'
+        backgroundColor: '#00FF00',
     },
     tittle: {
-        width: 256,
-        height: 80,
-        alignSelf: 'center',
-        marginVertical: 10,
+        fontSize: 26,
+        fontWeight: 'bold',
+        paddingBottom: 8,
+        paddingLeft: 10,
     },
     viewSearch: {
         backgroundColor: '#fff',

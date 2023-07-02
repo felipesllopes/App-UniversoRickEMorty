@@ -1,9 +1,9 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { adcFavorite, isFavorite, rmvFavorite } from "../../utils/storage";
+import { adcFavorite, isFavorite, rmvFavorite } from "../utils/storage";
 
-export default function DetailsItem() {
+export default function DetailsFavorites() {
 
     const route = useRoute();
     const navigation = useNavigation();
@@ -31,7 +31,7 @@ export default function DetailsItem() {
         <SafeAreaView style={styles.container} >
             <ScrollView showsVerticalScrollIndicator={false}>
 
-                {/* <Image source={require('../../img/tittle.png')} style={styles.tittle} /> */}
+                {/* <Image source={require('../img/tittle.png')} style={styles.tittle} /> */}
                 <Text style={styles.tittle}>Detalhes do Personagem</Text>
 
                 <View style={styles.nameCard}>
@@ -69,7 +69,6 @@ export default function DetailsItem() {
         </SafeAreaView>
     )
 }
-
 
 const styles = StyleSheet.create({
     container: {

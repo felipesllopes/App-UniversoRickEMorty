@@ -1,6 +1,7 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import CharactersRoutes from ".";
-import Favorites from "../favorites";
+import FavoritesRoutes from "./favorites";
+import CustomDrawer from "../components/CustomDrawer";
 
 export default function Routes() {
 
@@ -8,6 +9,9 @@ export default function Routes() {
 
     return (
         <Drawer.Navigator
+
+            drawerContent={(props) => <CustomDrawer {...props} />}
+
             screenOptions={{
                 drawerActiveTintColor: '#00FF00',
                 headerTintColor: '#00FF00',
@@ -22,16 +26,15 @@ export default function Routes() {
                     borderRadius: 10,
                     marginTop: 10,
                 },
-                headerStyle: { backgroundColor: '#000' },
             }}
         >
 
             <Drawer.Screen name="CharactersRoutes" component={CharactersRoutes}
-                options={{ title: 'Lista de personagens' }}
+                options={{ headerShown: false, title: 'Lista de Personagens' }}
             />
 
-            <Drawer.Screen name="Favorites" component={Favorites}
-                options={{ title: 'Personagens favoritos' }}
+            <Drawer.Screen name="FavoritesRoutes" component={FavoritesRoutes}
+                options={{ headerShown: false, title: 'Personagens Favoritos' }}
             />
 
         </Drawer.Navigator>

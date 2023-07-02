@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+// Listar todos os personagens favoritos
 export async function getFavorites(key) {
     const favorites = await AsyncStorage.getItem(key)
-    // console.log(favorites)
     return JSON.parse(favorites) || [];
 }
 
@@ -19,22 +19,22 @@ export async function isFavorite(key, value) {
     }
 }
 
+// Adicionar personagem aos favoritos
 export async function adcFavorite(key, value) {
 
     let myFavorites = await getFavorites(key);
 
-    let hasItem = myFavorites.some(item => item.id === value.id)
+    // let hasItem = myFavorites.some(item => item.id === value.id)
 
-    if (hasItem) {
-        alert("Este personagem já está salvo em seus favoritos")
-        return;
-    }
+    // if (hasItem) {
+    //     alert("Este personagem já está salvo em seus favoritos")
+    //     return;
+    // }
 
     myFavorites.push(value);
 
     await AsyncStorage.setItem(key, JSON.stringify(myFavorites))
-    console.log("Salvo com sucesso");
-    alert("Personagem salvo com sucesso!")
+    alert("Personagem adicionado aos seus favoritos!")
 
 }
 
@@ -48,7 +48,6 @@ export async function rmvFavorite(key, id) {
 
     await AsyncStorage.setItem(key, JSON.stringify(myFavorites));
 
-    console.log("Item deletado")
-    alert("Personagem removido!")
+    alert("Personagem removido dos seus favoritos!")
     return myFavorites;
 }
