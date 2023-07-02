@@ -9,6 +9,7 @@ export default function DetailsItem() {
     const navigation = useNavigation();
     const [item, setItem] = useState(route.params?.data)
     const [favorite, setFavorite] = useState(null);
+    let screen = route.params?.screen;
 
     useEffect(() => {
         (async () => {
@@ -24,6 +25,14 @@ export default function DetailsItem() {
         } else {
             await adcFavorite("@apprickandmorty", item);
             setFavorite(true)
+        }
+    }
+
+    function back() {
+        if (screen === 'lista') {
+            navigation.navigate('Home');
+        } else {
+            navigation.navigate('Favorites');
         }
     }
 
@@ -59,7 +68,7 @@ export default function DetailsItem() {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button}
-                        onPress={() => navigation.goBack()}>
+                        onPress={back}>
                         <Text style={styles.textButton}>Voltar</Text>
                     </TouchableOpacity>
                 </View>

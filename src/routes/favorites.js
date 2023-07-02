@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Favorites from "../favorites";
-import DetailsFavorites from "../favorites/DetailsFavorites";
+import DetailsItem from "../home/Lista/DetailsItem";
 
 export default function FavoritesRoutes() {
 
@@ -13,7 +13,7 @@ export default function FavoritesRoutes() {
                 options={{ headerShown: false }}
             />
 
-            <Stack.Screen name="DetailsFavorites" component={DetailsFavorites}
+            <Stack.Screen name="DetailsItem" component={DetailsItem}
                 options={{ headerShown: false }}
             />
 

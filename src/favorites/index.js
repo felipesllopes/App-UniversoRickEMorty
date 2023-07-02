@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import DrawerMenu from "../components/DrawerMenu";
+import Lista from "../home/Lista";
 import { getFavorites } from "../utils/storage";
-import ListFavorites from "./listFavorites";
 
 export default function Favorites() {
 
@@ -28,7 +28,7 @@ export default function Favorites() {
                 style={{ backgroundColor: '#00FF00' }}
                 data={favorites}
                 numColumns={2}
-                renderItem={({ item }) => <ListFavorites data={item} />}
+                renderItem={({ item }) => <Lista data={item} screen={'favorite'} />}
             />
 
         </View>

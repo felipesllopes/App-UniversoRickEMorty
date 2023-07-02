@@ -82,7 +82,7 @@ export default function Home() {
                         <FlatList
                             style={styles.flatList}
                             data={character.results}
-                            renderItem={({ item }) => <Lista data={item} />}
+                            renderItem={({ item }) => <Lista data={item} screen={'lista'} />}
                             numColumns={2}
                             showsVerticalScrollIndicator={false}
                         />
@@ -134,6 +134,6 @@ const styles = StyleSheet.create({
         marginTop: 200,
     },
     flatList: {
-        backgroundColor: '#555',
+        backgroundColor: '#00FF00',
     }
 })

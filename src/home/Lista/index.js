@@ -1,12 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function Lista({ data }) {
+export default function Lista({ data, screen }) {
 
     const navigation = useNavigation();
 
     function navegate() {
-        navigation.navigate('DetailsItem', { data: data })
+        navigation.navigate('DetailsItem', { data: data, screen: screen })
     }
 
     return (
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginVertical: 3,
         alignItems: 'center',
-        backgroundColor: '#555'
+        backgroundColor: '#00FF00'
     },
     image: {
         width: 200,
