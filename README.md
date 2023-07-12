@@ -2,10 +2,9 @@
 
 Rick and Morty drawing app, with more than 800 characters and some information.
 
-### App montage screen
+### SplashScreen
 
-![rm1](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/d84afc88-d388-475f-9266-3ab210661adf)
-
+![rm1](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/741cd3ff-3e10-4fa4-99d2-22da56a6b5a2)
 
 ### Character screen
 
