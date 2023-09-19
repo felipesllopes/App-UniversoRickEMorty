@@ -1,11 +1,13 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const key = "@apprickandmorty";
+
 /**
  * List all favorite characters.
  * @param {*} key 
  * @returns 
  */
-export async function getFavorites(key) {
+export async function getFavorites() {
     const favorites = await AsyncStorage.getItem(key)
     return JSON.parse(favorites) || [];
 }
@@ -16,7 +18,7 @@ export async function getFavorites(key) {
  * @param {*} value 
  * @returns 
  */
-export async function isFavorite(key, value) {
+export async function isFavorite(value) {
     let myFavorites = await getFavorites(key);
 
     let hasItem = myFavorites.some(item => item.id === value.id)
@@ -33,7 +35,7 @@ export async function isFavorite(key, value) {
  * @param {*} key 
  * @param {*} value 
  */
-export async function adcFavorite(key, value) {
+export async function adcFavorite(value) {
 
     let myFavorites = await getFavorites(key);
 
@@ -48,7 +50,7 @@ export async function adcFavorite(key, value) {
  * @param {*} id 
  * @returns 
  */
-export async function rmvFavorite(key, id) {
+export async function rmvFavorite(id) {
 
     let receipes = await getFavorites(key)
 

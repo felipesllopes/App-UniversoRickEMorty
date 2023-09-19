@@ -1,8 +1,6 @@
 import { useIsFocused } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
-import DrawerMenu from "../components/DrawerMenu";
+import styled from "styled-components/native";
 import Lista from "../home/Lista";
 import { getFavorites } from "../utils/storage";
 
@@ -18,34 +16,21 @@ export default function Favorites() {
     }, [focused])
 
     return (
-        <View style={styles.container}>
+        <Container>
 
-            <DrawerMenu />
-
-            <Text style={styles.tittle}>Personagens favoritos</Text>
-
-            <FlatList
-                style={{ backgroundColor: '#32CD32' }}
-                data={favorites}
+            <FavoritesList
+                data={favorites.sort((a, b) => a.id - b.id)}
                 numColumns={2}
-                renderItem={({ item }) => <Lista data={item} screen={'favorite'} />}
+                renderItem={({ item }) => <Lista data={item} />}
             />
 
-        </View>
+        </Container>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#32CD32',
-    },
-    tittle: {
-        fontSize: 26,
-        fontWeight: 'bold',
-        paddingBottom: 8,
-        paddingLeft: 10,
-        borderBottomWidth: 4,
-        borderBottomColor: '#006400',
-    },
-})
+const Container = styled.SafeAreaView`
+flex: 1;
+background-color: #32CD32;
+`;
+
+const FavoritesList = styled.FlatList``;

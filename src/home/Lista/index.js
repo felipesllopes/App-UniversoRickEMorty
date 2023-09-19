@@ -1,48 +1,55 @@
-import { useNavigation } from "@react-navigation/native";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useState } from "react";
+import { Dimensions, Modal } from "react-native";
+import styled from "styled-components/native";
+import ModalPerson from "../../components/ModalPerson";
 
-export default function Lista({ data, screen }) {
+export default function Lista({ data }) {
 
-    const navigation = useNavigation();
+    const screenWidth = Dimensions.get('window').width;
+    const itemWidth = screenWidth / 2;
+    const [modalVisible, setModalVisible] = useState(false);
 
-    function navegate() {
-        navigation.navigate('DetailsItem', { data: data, screen: screen })
+    function openModal(visible) {
+        setModalVisible(visible);
     }
 
     return (
-        <View style={styles.container}>
-            <TouchableOpacity activeOpacity={0.6} onPress={navegate}>
-                <Image style={styles.image} source={{ uri: data.image }} resizeMode="cover" />
-                <Text style={styles.name}>{data.name}</Text>
-            </TouchableOpacity>
-        </View>
+        <Container activeOpacity={0.7} onPress={() => openModal(true)} style={{ width: itemWidth, height: itemWidth }}>
+            <ImagePerson source={{ uri: data.image }} resizeMode="contain" />
+            <Name>{data.name}</Name>
+
+            <Modal visible={modalVisible} transparent={true}>
+                <ModalPerson
+                    data={data}
+                    close={() => setModalVisible(false)}
+                />
+            </Modal>
+
+        </Container>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginVertical: 3,
-        alignItems: 'center',
-        backgroundColor: '#32CD32'
-    },
-    image: {
-        width: 200,
-        height: 200,
-        borderRadius: 10
-    },
-    name: {
-        backgroundColor: 'rgba(0,0,0,0.8)',
-        width: 200,
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 16,
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
-        paddingHorizontal: 2,
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0
-    }
-})
+const Container = styled.TouchableOpacity`
+flex: 1;
+align-items: center;
+align-self: center;
+margin: 2px;
+`;
+
+const ImagePerson = styled.Image`
+width: 100%;
+height: 100%;
+border-radius: 15px;
+`;
+
+const Name = styled.Text`
+background-color: rgba(0,0,0,0.8);
+position: absolute;
+bottom: 0;
+width: 100%;
+text-align: center;
+color: #FFF;
+font-size: 17px;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+`;
