@@ -2,11 +2,30 @@
 
 Rick and Morty drawing app, with more than 800 characters and some information.
 
-![img1](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/7ab05877-e3f7-4601-a542-88f6b3dbd778)
-![img2](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/2b196c70-39b5-421c-9c98-7ad9b89431c6)
-![img3](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/a8e152ad-a1cc-44c2-a996-55eb76097640)
-![img4](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/40117d69-5291-4ab4-9a97-4ea9f5750205)
-![img5](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/f4436f99-fb27-40e2-acc5-a68d3948d704)
+### SplashScreen
+
+![rm1](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/741cd3ff-3e10-4fa4-99d2-22da56a6b5a2)
+
+### Character screen
+
+![rm2](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/882d1fc1-4414-490e-8288-c8faa3e6818d)
+![rm3](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/0bc9d2ae-26fe-4f04-8018-51aaeacf3207)
+![rm4](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/71a2b935-8bb5-4977-9a40-2a7ba3af5558)
+
+### Character details
+
+![rm5](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/05b67e51-f6cd-466d-bd43-d9bb06be7e5e)
+![rm6](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/04991a56-5b77-4230-a40b-e7d60c38f842)
+
+### Drawer
+
+![rm7](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/c1fe504a-43e9-4ce0-8d8e-b4c142d41fd2)
+
+
+### Favorite characters screen
+
+![rm8](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/f71b405d-3880-4234-b5f1-cd2d2b2c3c25)
+
 
 
 ### Technologies used:
