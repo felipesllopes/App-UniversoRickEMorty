@@ -14,11 +14,13 @@ export default function Lista({ data }) {
     }
 
     return (
-        <Container activeOpacity={0.7} onPress={() => openModal(true)} style={{ width: itemWidth, height: itemWidth }}>
+        <Container activeOpacity={0.7} onPress={() => openModal(true)}
+            style={{ width: itemWidth, height: itemWidth }}>
+                
             <ImagePerson source={{ uri: data.image }} resizeMode="contain" />
             <Name>{data.name}</Name>
 
-            <Modal visible={modalVisible} transparent={true}>
+            <Modal visible={modalVisible} transparent={true} animationType="slide">
                 <ModalPerson
                     data={data}
                     close={() => setModalVisible(false)}
@@ -31,8 +33,6 @@ export default function Lista({ data }) {
 
 const Container = styled.TouchableOpacity`
 flex: 1;
-align-items: center;
-align-self: center;
 margin: 2px;
 `;
 

@@ -2,10 +2,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import { adcFavorite, isFavorite, rmvFavorite } from "../utils/storage";
+import { useMyContext } from "./Context/Context";
 
 export default function ModalPerson({ data, close }) {
 
     const [favorite, setFavorite] = useState(null);
+    const { setReload } = useMyContext();
 
     useEffect(() => {
         (async () => {
@@ -23,10 +25,15 @@ export default function ModalPerson({ data, close }) {
         }
     }
 
+    function handleClose() {
+        close()
+        setReload(current => (current ? false : true))
+    }
+
     return (
         <Screen>
             <Wallpaper source={require('../img/wallpaper.jpg')}>
-                <Back name="close" size={30} onPress={close} />
+                <Back name="close" size={30} onPress={handleClose} />
 
                 <Name style={{}}> - {data.name}</Name>
 
@@ -53,10 +60,10 @@ export default function ModalPerson({ data, close }) {
 const Screen = styled.View`
 flex: 1;
 background-color: rgba(0,0,0,0.8);
+justify-content: center;
 `;
 
 const Wallpaper = styled.ImageBackground`
-flex: 1;
 margin: 60px 40px;
 padding: 15px;
 `;
@@ -70,7 +77,7 @@ position: absolute;
 const Name = styled.Text`
 font-size: 19px;
 font-weight: bold;
-background-color: #FFF;
+background-color: #D8FBD8;
 border-width: 2px;
 border-radius: 10px;
 padding: 0 5px;
@@ -85,7 +92,7 @@ border-radius: 6px;
 `;
 
 const Specie = styled.Text`
-background-color: #FFF;
+background-color: #FFF8DC;
 font-size: 17px;
 font-weight: bold;
 border-width: 2px;
@@ -96,8 +103,8 @@ padding: 1px 20px;
 const ViewInformation = styled.View`
 background-color: #FFF;
 border-width: 2px;
-padding: 1px 10px;
-margin: 0 6px;
+padding: 1px 10px 20px;
+margin: 0 6px 10px;
 `;
 
 const Information = styled.Text`
