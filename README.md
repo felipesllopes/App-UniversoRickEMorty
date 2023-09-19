@@ -67,3 +67,25 @@ App with API consumption from the Rick and Morty cartoon, with more than 800 cha
 </table>
 
 <br/>
+
+### How to copy and test the project using expo:
+
+Clone the repository:
+```
+git clone https://github.com/felipesllopes/App-rickAndMorty.git
+```
+
+Navigate to folder:
+```
+cd App-rickAndMorty
+```
+
+Install the dependencies:
+```
+npm install
+```
+
+Run expo command:
+```
+npx expo start
+```
