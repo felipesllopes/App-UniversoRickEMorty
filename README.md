@@ -50,7 +50,7 @@ App with API consumption from the Rick and Morty cartoon, with more than 800 cha
   </tr>
    <tr>
     <td><a href="https://reactnavigation.org/" target="_blank">React Navigation</a>: <br/>
-        <a href="https://reactnavigation.org/docs/drawer-navigator" target="_blank">Drawer</a>, 
+        <a href="https://reactnavigation.org/docs/drawer-navigator" target="_blank">Drawer</a>
     <td>6.6.2</td>
     <td>Navigation between screens</td>
   </tr>
