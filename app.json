@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "rickAndMorty",
+    "name": "Universo Rick e Morty",
     "slug": "rickAndMorty",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#101010"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,17 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#101010"
+      },
+      "package": "com.felipelopes.rickAndMorty"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "53934861-2dd4-4177-918c-d1c56b81c053"
+      }
     }
   }
 }
