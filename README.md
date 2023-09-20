@@ -7,7 +7,7 @@
 
 ### Description
 
-App with API consumption from the Rick and Morty cartoon, with more than 800 characters.
+Rick and Morty cartoon app, with more than 800 characters.
 
 <br/>
 
@@ -89,3 +89,9 @@ Run expo command:
 ```
 npx expo start
 ```
+
+<br/>
+
+### You can also install the project's APK and test it directly on your cell phone or on your Android emulator:
+
+[![Download](https://img.shields.io/badge/Download-6FDA44?style=for-the-badge)](https://drive.google.com/file/d/1Zs-4PNQOEH0MrCaTzJxkO7VN_-bIJbIT/view?usp=sharing)
