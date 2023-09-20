@@ -94,4 +94,4 @@ npx expo start
 
 ### You can also install the project's APK and test it directly on your cell phone or on your Android emulator:
 
-[![Download](https://img.shields.io/badge/Download-6FDA44?style=for-the-badge)](https://drive.google.com/file/d/1Zs-4PNQOEH0MrCaTzJxkO7VN_-bIJbIT/view?usp=sharing)
+[![Download](https://img.shields.io/badge/Download-6FDA44?style=for-the-badge)](https://drive.google.com/file/d/1jdVr6GFln5iDLK_aPyyrGEtD1vXls9Lg/view?usp=sharing)
