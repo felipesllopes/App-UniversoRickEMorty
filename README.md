@@ -1,47 +1,97 @@
 # App-rickAndMorty
 
-Rick and Morty drawing app, with more than 800 characters and some information.
-
-### SplashScreen
-
-![rm1](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/741cd3ff-3e10-4fa4-99d2-22da56a6b5a2)
-
-### Character screen
-
-![rm2](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/882d1fc1-4414-490e-8288-c8faa3e6818d)
-![rm3](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/0bc9d2ae-26fe-4f04-8018-51aaeacf3207)
-![rm4](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/71a2b935-8bb5-4977-9a40-2a7ba3af5558)
-
-### Character details
-
-![rm5](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/05b67e51-f6cd-466d-bd43-d9bb06be7e5e)
-![rm6](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/04991a56-5b77-4230-a40b-e7d60c38f842)
-
-### Drawer
-
-![rm7](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/c1fe504a-43e9-4ce0-8d8e-b4c142d41fd2)
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/99768939/269116192-61e6a2fc-b6a8-467d-bdda-a83215cc8f16.png" alt="Logo BB" width="288" height="232">
 
 
-### Favorite characters screen
+<br/>
 
-![rm8](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/f71b405d-3880-4234-b5f1-cd2d2b2c3c25)
+### Description
 
+Rick and Morty cartoon app, with more than 800 characters.
 
+<br/>
 
-### Technologies used:
+### Screens
 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Expo](https://img.shields.io/badge/Expo-5277C3?style=for-the-badge&logo=expo&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
-![Axios](https://img.shields.io/badge/-Axios-white?style=for-the-badge&logo=Axios&logoColor=7B68EE)
+![tela1](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/35aa50d1-5a4e-48af-bcce-e6767aa145b7)
+![tela2](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/55ee08fe-a451-4644-bee1-042ee96f6716)
+![tela3](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/ebb6a65d-89b5-4590-b179-fa781591edd0)
+![tela4](https://github.com/felipesllopes/App-rickAndMorty/assets/99768939/86ba4460-4959-4be5-a5a8-eb559ec59c07)
 
+<br/>
+
+### Language and Technologies used
+
+- Javascript
+- Node.Js
+- React Native
+- Expo
+
+<br/>
 
 ### API:
 
-https://rickandmortyapi.com/
+[rickandmortyapi](https://rickandmortyapi.com/)
 
+<br/>
 
-### Libraries:
-- [Axios](https://axios-http.com/ptbr/docs/intro)
-- [Navigation](https://reactnavigation.org/)
+### Libraries used
+
+<table>
+  <tr>
+    <td>Library</td>
+    <td>Version</td>
+    <td>Description</td>
+  </tr>
+    <tr>
+    <td><a href="https://styled-components.com/" target="_blank">Styled-components</a></td>
+      <td>6.0.8</td>
+    <td>Component styling</td>
+  </tr>
+   <tr>
+    <td><a href="https://reactnavigation.org/" target="_blank">React Navigation</a>: <br/>
+        <a href="https://reactnavigation.org/docs/drawer-navigator" target="_blank">Drawer</a>
+    <td>6.6.2</td>
+    <td>Navigation between screens</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.npmjs.com/package/axios" target="_blank">Axios</a></td>
+    <td>1.4.0</td>
+    <td>API consumption</td>
+  </tr>
+   <tr>
+    <td><a href="https://docs.expo.dev/versions/latest/sdk/async-storage/" target="_blank">Async Storage</a></td>
+    <td>1.17.11</td>
+    <td>Asynchronous key-value store</td>
+  </tr>
+</table>
+
+<br/>
+
+### How to copy and test the project using expo:
+
+Clone the repository:
+```
+git clone https://github.com/felipesllopes/App-rickAndMorty.git
+```
+
+Navigate to folder:
+```
+cd App-rickAndMorty
+```
+
+Install the dependencies:
+```
+npm install
+```
+
+Run expo command:
+```
+npx expo start
+```
+
+<br/>
+
+### You can also install the project's APK and test it directly on your cell phone or on your Android emulator:
+
+[![Download](https://img.shields.io/badge/Download-6FDA44?style=for-the-badge)](https://drive.google.com/file/d/1Zs-4PNQOEH0MrCaTzJxkO7VN_-bIJbIT/view?usp=sharing)
